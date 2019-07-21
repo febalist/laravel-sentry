@@ -1,0 +1,19 @@
+{
+  "name": "febalist/laravel-sentry",
+  "autoload": {
+    "psr-4": {
+      "Febalist\\Laravel\\Sentry\\": "src/"
+    }
+  },
+  "require": {
+    "laravel/framework": "^5.8",
+    "sentry/sentry-laravel": "^1.1"
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Febalist\\Laravel\\Sentry\\SentryServiceProvider"
+      ]
+    }
+  }
+}
