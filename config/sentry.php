@@ -10,4 +10,6 @@ return [
         // Capture bindings on SQL queries logged in breadcrumbs
         'sql_bindings' => true,
     ],
+
+    'send_default_pii' => false,
 ];
