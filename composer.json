@@ -8,6 +8,7 @@
   "require": {
     "laravel/framework": "^5.8",
     "sentry/sentry-laravel": "^1.1",
+    "foxy/foxy": "^1.0",
     "febalist/laravel-javascript": "^1.0|dev-master"
   },
   "extra": {
@@ -15,6 +16,7 @@
       "providers": [
         "Febalist\\Laravel\\Sentry\\SentryServiceProvider"
       ]
-    }
+    },
+    "foxy": true
   }
 }
