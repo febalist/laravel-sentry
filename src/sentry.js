@@ -5,6 +5,17 @@ import * as Integrations from '@sentry/integrations'
 
 window.sentry = {
   client: Sentry,
+  report: function(error) {
+    if (app.sentry) {
+      if (typeof error === 'string') {
+        sentry.client.captureMessage(error)
+      } else {
+        sentry.client.captureException(error)
+      }
+    }
+
+    console.log(error)
+  },
 }
 
 if (app.sentry) {
