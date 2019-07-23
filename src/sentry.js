@@ -13,8 +13,6 @@ window.sentry = {
         sentry.client.captureException(error)
       }
     }
-
-    console.log(error)
   },
 }
 
@@ -27,6 +25,13 @@ if (app.sentry) {
     integrations: [
       new Integrations.Vue({Vue, attachProps: true}),
     ],
+    beforeSend (event, hint) {
+      if (hint.originalException) {
+        console.error(hint.originalException)
+      }
+
+      return event
+    },
   })
 
   sentry.client.setTags(app.sentry.tags)
