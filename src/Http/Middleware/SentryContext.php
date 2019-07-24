@@ -19,7 +19,10 @@ class SentryContext
                 'ip_address' => $request->ip(),
                 'guest' => !$user,
             ]);
-            Sentry::user($user->only(['id', 'login', 'username', 'email', 'name']));
+
+            if ($user) {
+                Sentry::user($user->only(['id', 'login', 'username', 'email', 'name']));
+            }
 
             Sentry::tags([
                 'route' => $request->route()->getName(),
