@@ -2,9 +2,9 @@
 
 namespace Febalist\Laravel\Sentry;
 
-use Exception;
 use Sentry\State\Hub;
 use Sentry\State\Scope;
+use Throwable;
 use function Sentry\configureScope;
 
 class Sentry
@@ -12,7 +12,7 @@ class Sentry
     protected static $user = [];
     protected static $tags = [];
 
-    public static function capture(Exception $exception)
+    public static function capture(Throwable $exception)
     {
         if (static::enabled()) {
             static::instance()->captureException($exception);
