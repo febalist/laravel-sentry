@@ -75,6 +75,7 @@ class Sentry
             'release' => config('sentry.release'),
             'user' => static::$user,
             'tags' => static::$tags,
+            'traces_sample_rate' => config('sentry.traces_sample_rate'),
         ]);
     }
 }
