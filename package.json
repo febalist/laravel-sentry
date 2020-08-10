@@ -1,5 +1,5 @@
 {
-  "version": "2.1.0",
+  "version": "2.1.1",
   "dependencies": {
     "@sentry/apm": "^5.20.1",
     "@sentry/browser": "^5.20.1",
