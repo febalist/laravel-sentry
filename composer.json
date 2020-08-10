@@ -6,8 +6,8 @@
     }
   },
   "require": {
-    "febalist/laravel-javascript": "^1.0|dev-master",
-    "sentry/sentry-laravel": "^1.1"
+    "febalist/laravel-javascript": "^1.0",
+    "sentry/sentry-laravel": "^1.8.0"
   },
   "extra": {
     "laravel": {
