@@ -26,5 +26,6 @@ class SentryServiceProvider extends ServiceProvider
     public function register()
     {
         $this->mergeConfigFrom(__DIR__.'/../config/sentry.php', 'sentry');
+        $this->mergeConfigFrom(__DIR__.'/../config/febalist-sentry.php', 'febalist-sentry');
     }
 }
