@@ -5,17 +5,16 @@ namespace Febalist\Laravel\Sentry;
 use Sentry\State\Hub;
 use Sentry\State\Scope;
 use Throwable;
-use function Sentry\configureScope;
 
 class Sentry
 {
     protected static $user = [];
     protected static $tags = [];
 
-    public static function capture(Throwable $exception)
+    public static function capture(Throwable $e)
     {
         if (static::enabled()) {
-            static::instance()->captureException($exception);
+            static::instance()->captureException($e);
         }
     }
 
@@ -24,7 +23,7 @@ class Sentry
         if (static::enabled()) {
             static::$user = array_merge(static::$user, $context);
 
-            configureScope(function (Scope $scope) {
+            static::instance()->configureScope(function (Scope $scope) {
                 $scope->setUser(static::$user);
             });
 
@@ -37,7 +36,7 @@ class Sentry
         if (static::enabled()) {
             static::$tags = array_merge(static::$tags, $context);
 
-            configureScope(function (Scope $scope) {
+            static::instance()->configureScope(function (Scope $scope) {
                 foreach (static::$tags as $key => $value) {
                     if ($value === null) {
                         continue;
@@ -73,9 +72,9 @@ class Sentry
         javascript('sentry', [
             'dsn' => config('sentry.dsn'),
             'release' => config('sentry.release'),
+            'traces_sample_rate' => config('sentry.traces_sample_rate'),
             'user' => static::$user,
             'tags' => static::$tags,
-            'traces_sample_rate' => config('febalist-sentry.traces_sample_rate'),
         ]);
     }
 }

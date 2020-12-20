@@ -1,0 +1,14 @@
+<?php
+
+namespace App\Providers;
+
+use Febalist\Laravel\Sentry\Sentry;
+use Illuminate\Support\ServiceProvider;
+
+class SentryServiceProvider extends ServiceProvider
+{
+    public function boot()
+    {
+        Sentry::tags([]);
+    }
+}

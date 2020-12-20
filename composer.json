@@ -1,20 +1,19 @@
 {
-  "name": "febalist/laravel-sentry",
-  "autoload": {
-    "psr-4": {
-      "Febalist\\Laravel\\Sentry\\": "src/"
+    "name": "febalist/laravel-sentry",
+    "autoload": {
+        "psr-4": {
+            "Febalist\\Laravel\\Sentry\\": "src/"
+        }
+    },
+    "require": {
+        "febalist/laravel-javascript": "^2.0",
+        "sentry/sentry-laravel": "^2.3"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Febalist\\Laravel\\Sentry\\SentryServiceProvider"
+            ]
+        }
     }
-  },
-  "require": {
-    "febalist/laravel-javascript": "^1.0",
-    "sentry/sentry-laravel": "^1.7.0"
-  },
-  "extra": {
-    "laravel": {
-      "providers": [
-        "Febalist\\Laravel\\Sentry\\SentryServiceProvider"
-      ]
-    }
-  }
 }
-
