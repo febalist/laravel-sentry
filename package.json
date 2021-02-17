@@ -1,10 +1,10 @@
 {
-    "name": "@febalist/laravel-sentry",
-    "version": "0.0.0",
-    "private": true,
-    "main": "src/index.js",
-    "dependencies": {
-        "@sentry/vue": "^5.29.2",
-        "@sentry/tracing": "^5.29.2"
-    }
+  "private": true,
+  "name": "@febalist/laravel-sentry",
+  "version": "0.0.0",
+  "main": "src/index.js",
+  "dependencies": {
+    "@sentry/tracing": "^6.0.0",
+    "@sentry/vue": "^6.0.0"
+  }
 }
