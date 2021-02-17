@@ -6,7 +6,7 @@ import {Integrations} from '@sentry/tracing';
 window.sentry = {
     client: Sentry,
     report: function(e) {
-        if (window.laravel?.sentry) {
+        if (window.laravel && window.laravel.sentry) {
             if (typeof e === 'string') {
                 sentry.client.captureMessage(e);
             } else {
@@ -16,7 +16,7 @@ window.sentry = {
     },
 };
 
-if (window.laravel?.sentry) {
+if (window.laravel && window.laravel.sentry) {
     const options = {
         Vue: Vue,
         dsn: laravel.sentry.dsn,
