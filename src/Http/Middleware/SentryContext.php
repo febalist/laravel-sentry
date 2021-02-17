@@ -16,7 +16,7 @@ class SentryContext
             Sentry::user([
                 'ip_address' => $request->ip(),
                 'guest' => !$user,
-                'session' => $request->session()->getId(),
+                'session' => $request->hasSession() ? $request->session()->getId() : null,
             ]);
 
             if ($user) {
